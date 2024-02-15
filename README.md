@@ -1,37 +1,27 @@
-Клонировать репозиторий и перейти в него в командной строке:
+# Проект укорачиватель ссылок на Flask
 
-```
-git clone 
-```
+## Установка:
 
-```
-cd yacut
-```
+1. Склонируйте репозитарий:
+`git clone git@github.com:nesterovv89/yacut.git`
+2. Создайте виртуальное окружение:
+`python3 -m venv venv`
+`source venv/bin/activate`
+3. Установите зависимости:
+`pip install -r requirements.txt`
 
-Cоздать и активировать виртуальное окружение:
+## Запуск:
+`flask run`
 
-```
-python3 -m venv venv
-```
 
-* Если у вас Linux/macOS
+## Общие сведения:
 
-    ```
-    source venv/bin/activate
-    ```
+Данный проект позволяет:
+- Создавать короткую ссылку с рандомным или пользовательским именем
+- По короткой ссылке возвращать из БД оригинальную ссылку и переходить по ней
+- К проекту подключен API
 
-* Если у вас windows
+## В проекте использованы технологии Python, Flask, SQLAlchemy
 
-    ```
-    source venv/scripts/activate
-    ```
 
-Установить зависимости из файла requirements.txt:
-
-```
-python3 -m pip install --upgrade pip
-```
-
-```
-pip install -r requirements.txt
-```
+Автор [Павел Нестеров](https://github.com/nesterovv89)

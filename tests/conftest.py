@@ -16,15 +16,12 @@ try:
     from yacut.models import URLMap
 except NameError:
     raise AssertionError(
-        'Не обнаружен объект приложения. Создайте экземпляр класса Flask и '
-        'назовите его app.',
+        'Не обнаружен объект приложения. Создайте экземпляр класса Flask и назовите его app.',
     )
 except ImportError as exc:
     if any(obj in exc.name for obj in ['models', 'URLMap']):
         raise AssertionError('В файле models не найдена модель URLMap')
-    raise AssertionError(
-        'Не обнаружен объект класса SQLAlchemy. Создайте его и назовите db.'
-    )
+    raise AssertionError('Не обнаружен объект класса SQLAlchemy. Создайте его и назовите db.')
 
 
 @pytest.fixture
