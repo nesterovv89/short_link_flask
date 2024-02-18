@@ -3,7 +3,7 @@ from flask import jsonify, render_template
 from . import app, db
 
 
-class InvalidAPIUsage(Exception):
+class ShortLinkServiceError(Exception):
     status_code = 400
 
     def __init__(self, message, status_code=None):
@@ -27,6 +27,6 @@ def internal_error(error):
     return render_template('500.html'), 500
 
 
-@app.errorhandler(InvalidAPIUsage)
+@app.errorhandler(ShortLinkServiceError)
 def invalid_api_usage(error):
     return jsonify(error.to_dict()), error.status_code

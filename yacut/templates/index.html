@@ -17,11 +17,9 @@
                 <div>
                   {{ form.original_link(class="form-control form-control-lg py-2 mb-3", id="form-title", placeholder=form.original_link.label.text)}}
                   <p>
-                    {% if form.original_link.errors %}
-                        {% for error in form.original_link.errors %}
-                        <span style="color:red">{{ error }}</span>
-                        {% endfor %}
-                    {% endif %}
+                    {% for error in form.original_link.errors %}
+                      <span style="color:red">{{ error }}</span>
+                    {% endfor %}
                   </p>
                 </div>
                 <div>
@@ -56,9 +54,9 @@
             <p class="text-center">
             <h5 class="text-center">
               {% if short %}
-                Ваша новая ссылка готова:<br />
-                <a href="{{ url_for('redirect_view', short=short, _external=True) }}">{{ url_for('redirect_view', short=short, _external=True) }}</a>
-              {% endif %} 
+                 Ваша новая ссылка готова:<br />
+                  <a href="{{ short }}">{{ short }}</a>
+              {% endif %}
             </h5>
             </p>
           </div>
